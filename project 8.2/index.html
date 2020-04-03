@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>to do list</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+<div id="myapp" class="container">
+  <form action="">
+    <input type="text" placeholder="type your task" v-model="tasktext">
+    <button @click.prevent="addtask" :disabled="!tasktext" >Add Task</button>
+    <button class="delete-all-tasks" v-if="tasks.length > 1" @click="deleteall">Delete All Tasks</button>
+  </form>
+  <div class="task-list" v-for="(task,index) in tasks">
+    <div class="task-box" @click="task.done=!task.done" :style=" {'text-decoration':task.done ? 'line-through' : '' } ">{{task.words}}</div>
+    <span class="delete" @click="deletetask(index)">Delete</span>
+  </div>
+</div>
+
+<script src="js/vue.js"></script>
+
+<script>
+var app = new Vue({
+  el:"#myapp",
+  data:{
+    tasks:[],
+    tasktext:"",
+  },
+  methods:{
+  addtask: function() {
+  this.tasks.push({words:this.tasktext, done:false});
+  this.tasktext="";
+},
+deletetask:function(index){
+  this.tasks.splice(index,1);
+},
+deleteall:function(){
+  this.tasks=[];
+}
+},
+
+});
+</script>
+
+  </body>
+</html>

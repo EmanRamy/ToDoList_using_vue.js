@@ -1,0 +1,49 @@
+.container
+{
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+}
+form input
+{
+width: 350px;
+padding: 10px;
+font-size: 20px;
+background-color: rgba(153, 153, 255,0.4);
+border:none;
+}
+form button
+{
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 230,0.9);
+  color:white;
+  padding: 10px;
+  border:none;
+  border-radius: 2px;
+}
+.delete-all-tasks
+{
+  background-color: red;
+}
+.task-box
+{
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  border:1px solid lightgrey;
+  border-radius:2px;
+  margin: 10px;
+  width:400px;
+}
+.delete
+{
+  background-color: red;
+  color:white;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 2px;
+  padding: 10px;
+  cursor: pointer;
+}
